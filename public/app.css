@@ -1,0 +1,127 @@
+body {
+  /* --screen-sm: 320px;
+  --screen-md: 600px;
+  --screen-lg: 1025px; */
+  --space-xs: 2px;
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 16px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--screen-md);
+}
+.header h1 {
+  margin: 10px;
+}
+.header button {
+  background-color: transparent;
+  border: 1px blue solid;
+  color: blue;
+  padding: var(--space-md);
+}
+.divider {
+  border-top: var(--space-xs) solid rgb(218, 216, 216);
+}
+
+.tile-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tile-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: var(--space-sm);
+  align-items: center;
+  cursor: move;
+  background-color: rgb(236, 233, 233);
+  border: 1px gray solid;
+  border-radius: var(--space-sm);
+  text-align: left;
+  padding-left: 0px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  min-width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 14px;
+}
+
+.search-input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border: 1.5px solid #009688;
+  background-color: white;
+}
+
+.icon-wrapper {
+  background-color: white;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-icon {
+  width: 65%;
+  height: 65%;
+  border-radius: var(--space-md);
+  background-color: aquamarine;
+  color: white;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.tile-description {
+  width: 75%;
+  padding-left: 15px;
+}
+.tile-title {
+  color: rgba(35, 35, 212, 0.86);
+}
+
+.tile-move {
+  padding: var(--space-sm);
+}
+
+.dragging {
+  cursor: grabbing;
+  border: 2px teal solid;
+  opacity: 0.5;
+}
+
+@media (min-width: 600px) {
+  .tile-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header {
+    flex-direction: row;
+  }
+}
