@@ -1,26 +1,12 @@
 import data from "./data.json";
 
-// async function fetchData() {
-// const data = import("../data.json");
-//   return data;
-// }
-function moveToPosition(startId, endId, items) {
-  let startIndex, endIndex;
-  for (let i = 0; i < items.length; i++) {
-    if (startId === items[i].id) startIndex = i;
-    if (endId === items[i].id) endIndex = i;
-    if (startIndex && endIndex) break;
-  }
-  const newItems = [...items];
-  const draggedItem = newItems[startIndex];
-  newItems.splice(startIndex, 1);
-  newItems.splice(endIndex, 0, draggedItem);
-
-  const root = document.getElementById("main");
-  const app = initialize(newItems);
-  root.innerHTML = ""; // clears app
-  root.append(app);
+function reInitializeList(items) {
+  const list = document.getElementById("main");
+  const app = initialize(items);
+  list.innerHTML = ""; // clears list
+  list.append(app);
 }
+
 function createTile(item, items) {
   const listItem = document.createElement("li");
 
@@ -41,8 +27,14 @@ function createTile(item, items) {
   });
 
   button.addEventListener("drop", (e) => {
-    moveToPosition(e.dataTransfer.getData("itemId"), item.id, items);
+    const items = changePositions(
+      e.dataTransfer.getData("itemId"),
+      item.id,
+      items
+    );
+    reInitializeList(items);
   });
+
   let initial = item.title
     .split(" ")
     .map(function (str) {
@@ -67,6 +59,7 @@ function createTile(item, items) {
 
   return button;
 }
+
 function createAppList(items) {
   const list = document.createElement("ul");
   list.classList.add("tile-list");
