@@ -69,6 +69,26 @@
         "altText": "My GUS"
       },
       "position": 7
-    }
+    },
+        {
+          "id": "app8",
+          "title": "My GUS3",
+          "description": "An empty shell which gives you the ability to create your own navigation",
+          "image": {
+            "url": "",
+            "altText": "My GUS"
+          },
+          "position": 8
+        },
+            {
+              "id": "app9",
+              "title": "My GUS3",
+              "description": "An empty shell which gives you the ability to create your own navigation",
+              "image": {
+                "url": "",
+                "altText": "My GUS"
+              },
+              "position": 9
+            }
   ]
 }

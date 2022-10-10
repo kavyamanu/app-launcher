@@ -41,7 +41,7 @@ const createTile = (item, items) => {
 
   button.innerHTML = tileItem;
   listItem.appendChild(button);
-  return button;
+  return listItem;
 };
 
 const initializeAppList = (items) => {
