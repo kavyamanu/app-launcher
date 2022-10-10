@@ -22,11 +22,11 @@ header {
   background-color: #fff;
   z-index: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  gap: var(--screen-md);
+  gap: var(--space-md);
   padding: var(--space-sm) var(--space-lg);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
 }
@@ -82,7 +82,7 @@ header {
   margin: 0;
   padding: 0 var(--space-lg);
   position: relative;
-  top: 86px;
+  top: 174px;
 }
 
 .tile-item {
@@ -146,8 +146,10 @@ header {
 @media (min-width: 600px) {
   .tile-list {
     grid-template-columns: repeat(3, 1fr);
+    top:86px
   }
-  .header {
+  header {
     flex-direction: row;
   }
+  
 }
