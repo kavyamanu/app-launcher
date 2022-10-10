@@ -52,14 +52,14 @@ function createTile(item, items) {
     .join("");
 
   const tileItem = `
-      <div class="icon-wrapper">
+      <div class="icon-wrapper" aria-hidden="true">
     <div class="tile-icon">${initial}</div>
     </div>
     <div class="tile-description">
       <h2 class="tile-title">${item.title}</h2>
       <p>${item.description}</p>
     </div>
-    <img src="./images/drag.svg" width=24 height=24 class="tile-move"/>
+    <img src="./images/drag.svg" alt="drag" width=24 height=24 class="tile-move"/>
   `;
 
   button.innerHTML = tileItem;
@@ -103,12 +103,12 @@ function createHeader() {
   header.classList.add("header");
 
   const headerItems = `
-  <h1>App Launcher</h1>
+  <h1 class="title">App Launcher</h1>
   <div class ="search-wrapper">
-    <img class="search-icon" src="./images/search.svg"/>
+    <img class="search-icon" src="./images/search.svg" aria-hidden="true"/>
     <input class="search-input" type="text" placeholder="Search app or items..."  />
   </div>
-  <button>Add New</button
+  <button class="add-app">Add New</button
   `;
 
   header.innerHTML = headerItems;

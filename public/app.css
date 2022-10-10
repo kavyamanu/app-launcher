@@ -6,7 +6,17 @@ body {
   --space-sm: 4px;
   --space-md: 8px;
   --space-lg: 16px;
+  --gray-0: #f3f4f6;
+  --gray-1: #cbd5e1;
+  --gray-2: #64748b;
+  --gray-3: #1f2937;
+  --blue-1: #7dd3fc;
+  --blue-2: #0284c7;
+  --blue-3: #0369a1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -14,17 +24,51 @@ body {
   align-items: center;
   gap: var(--screen-md);
 }
-.header h1 {
+
+.title {
   margin: 10px;
+  color: var(--gray-3);
 }
-.header button {
+
+.add-app {
   background-color: transparent;
-  border: 1px blue solid;
-  color: blue;
+  border: 1px var(--blue-3) solid;
+  border-radius: var(--space-sm);
+  color: var(--blue-3);
   padding: var(--space-md);
 }
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  min-width: 300px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+}
+
+.search-input {
+  border: 1px solid var(--gray-2);
+  border-radius: var(--space-md);
+  background-color: var(--gray-0);
+  height: 28px;
+  width: 100%;
+  padding: 2px 30px 0;
+  outline: 0;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border: 1.5px solid var(--blue-3);
+  background-color: white;
+}
+
 .divider {
-  border-top: var(--space-xs) solid rgb(218, 216, 216);
+  border-top: var(--space-xs) solid var(--gray-1);
 }
 
 .tile-list {
@@ -43,44 +87,15 @@ body {
   padding-left: var(--space-sm);
   align-items: center;
   cursor: move;
-  background-color: rgb(236, 233, 233);
-  border: 1px gray solid;
+  background-color: var(--gray-0);
+  border: 1px var(--gray-2) solid;
   border-radius: var(--space-sm);
   text-align: left;
   padding-left: 0px;
 }
 
-.search-wrapper {
-  position: relative;
-  display: flex;
-  min-width: 300px;
-}
-
-.search-icon {
-  position: absolute;
-  top: 6px;
-  left: 8px;
-  width: 14px;
-}
-
-.search-input {
-  border: 1px solid grey;
-  border-radius: 5px;
-  height: 20px;
-  width: 100%;
-  padding: 2px 23px 2px 30px;
-  outline: 0;
-  background-color: #f5f5f5;
-}
-
-.search-input:hover,
-.search-input:focus {
-  border: 1.5px solid #009688;
-  background-color: white;
-}
-
 .icon-wrapper {
-  background-color: white;
+  background-color: #fff;
   width: 100px;
   height: 100%;
   display: flex;
@@ -92,19 +107,21 @@ body {
   width: 65%;
   height: 65%;
   border-radius: var(--space-md);
-  background-color: aquamarine;
+  background-color: var(--blue-2);
   color: white;
   display: flex;
   font-size: 24px;
   justify-content: center;
   align-items: center;
 }
+
 .tile-description {
   width: 75%;
-  padding-left: 15px;
+  padding-left: var(--space-lg);
 }
+
 .tile-title {
-  color: rgba(35, 35, 212, 0.86);
+  color: var(--blue-3);
 }
 
 .tile-move {
@@ -113,7 +130,7 @@ body {
 
 .dragging {
   cursor: grabbing;
-  border: 2px teal solid;
+  border: 2px var(--blue-3) solid;
   opacity: 0.5;
 }
 
