@@ -24,11 +24,9 @@ header {
   top: 0;
   background-color: #fff;
   z-index: 1;
-}
-
-.header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   gap: var(--screen-md);
